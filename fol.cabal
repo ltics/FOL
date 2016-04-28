@@ -17,8 +17,12 @@ library
   hs-source-dirs:      src
   exposed-modules:     Ast
                      , Core
+                     , Lexer
   build-depends:       base >= 4.7 && < 5
                      , pretty
+                     , array
+  build-tools:         happy
+                     , alex
   default-language:    Haskell2010
 
 executable fol
