@@ -1,11 +1,11 @@
 {
 module Lexer where
+import Ast(Name)
 }
 
 %wrapper "basic"
 
 $letter = [a-zA-Z]
-$digit  = 0-9
 $eol    = [\n]
 
 tokens :-
@@ -24,6 +24,7 @@ tokens :-
        "."          { \_ -> DOT }
        "("          { \_ -> LPAREN }
        ")"          { \_ -> RPAREN }
+       $letter+     { \s -> VAR s }
 
 {
 data Token = TRUE
@@ -38,5 +39,9 @@ data Token = TRUE
            | DOT
            | LPAREN
            | RPAREN
+           | VAR Name
            deriving(Eq, Show)
+
+scanTokens = alexScanTokens
+
 }
