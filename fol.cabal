@@ -18,6 +18,7 @@ library
   exposed-modules:     Ast
                      , Core
                      , Lexer
+                     , Parser
   build-depends:       base >= 4.7 && < 5
                      , pretty
                      , array

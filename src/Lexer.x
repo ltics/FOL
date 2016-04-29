@@ -10,9 +10,9 @@ $eol    = [\n]
 
 tokens :-
        $eol         ;
-       $white+		;
+       $white+      ;
        "#".*        ; --comments
-       "⊤"			{ \_ -> TRUE }
+       "⊤"          { \_ -> TRUE }
        "⊥"          { \_ -> FALSE }
        "¬"          { \_ -> NEG }
        "∧"          { \_ -> CONJ }
@@ -43,5 +43,4 @@ data Token = TRUE
            deriving(Eq, Show)
 
 scanTokens = alexScanTokens
-
 }
