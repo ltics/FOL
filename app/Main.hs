@@ -1,3 +1,5 @@
+{-# OPTIONS_GHC -Wall #-}
+
 module Main where
 
 import Control.Lens
@@ -10,6 +12,7 @@ import System.Console.Haskeline
 process :: String -> IO ()
 process = putStrLn . show . toplevel . parseExpr
 
+loop :: InputT IO ()
 loop = do
   minput <- getInputLine "λ> "
   case minput of
