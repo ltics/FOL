@@ -1,14 +1,11 @@
 name:                fol
 version:             0.1.0.0
-synopsis:            Initial project template from stack, using hspec and quickcheck
-description:         Please see README.md
-homepage:            https://github.com/githubuser/fol#readme
+homepage:            https://github.com/zjhmale/fol
 license:             BSD3
 license-file:        LICENSE
-author:              Author name here
-maintainer:          example@example.com
-copyright:           2016 Author name here
-category:            Web
+author:              zjhmale
+maintainer:          zjhmale@example.com
+copyright:           2016 zjhmale
 build-type:          Simple
 -- extra-source-files:
 cabal-version:       >=1.10
@@ -50,4 +47,4 @@ test-suite fol-test
 
 source-repository head
   type:     git
-  location: https://github.com/githubuser/fol
+  location: https://github.com/zjhmale/fol
