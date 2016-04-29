@@ -24,6 +24,11 @@ import Lexer
     ')'     { RPAREN }
     VAR     { VAR $$ }
 
+%left equiv
+%left impl
+%left disj
+%left conj
+%left neg
 %%
 
 Expr : forall VAR dot Expr         { TForall $2 $4 }
@@ -39,7 +44,7 @@ Form : Form equiv Form             { TEquiv $1 $3 }
 Atom : true                        { TTrue }
      | false                       { TFalse }
      | VAR                         { TVar $1 }
-     | neg Expr                    { TNeg $2 }
+     | neg Atom                    { TNeg $2 }
      | '(' Expr ')'                { $2 }
 
 {
