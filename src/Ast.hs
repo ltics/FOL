@@ -16,6 +16,7 @@ data Term = TTrue
           | TEquiv Term Term
           | TForall Name Term
           | TExists Name Term
+          deriving (Eq)
 
 infix 1 |>
 
