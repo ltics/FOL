@@ -28,3 +28,6 @@ eval env term = case term of
                   TExists n t -> e1 || e2 where
                     e1 = eval (extend env n True) t
                     e2 = eval (extend env n False) t
+
+toplevel :: Term -> Bool
+toplevel = eval empty
