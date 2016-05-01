@@ -13,7 +13,7 @@ data Term = TTrue
           | TConj Term Term
           | TDisj Term Term
           | TImpl Term Term
-          | TEquiv Term Term
+          | TEquiv Term Term -- if and only if
           | TForall Name Term
           | TExists Name Term
           deriving (Eq)
@@ -37,6 +37,6 @@ prType (TNeg t) = "¬" ++ prType t |> parens
 prType (TConj t1 t2) = prType t1 ++ " ∧ " ++ prType t2 |> parens
 prType (TDisj t1 t2) = prType t1 ++ " ∨ " ++ prType t2 |> parens
 prType (TImpl t1 t2) = prType t1 ++ " ⇒ " ++ prType t2 |> parens
-prType (TEquiv t1 t2) = prType t1 ++ " ≡ " ++ prType t2 |> parens
+prType (TEquiv t1 t2) = prType t1 ++ " ↔ " ++ prType t2 |> parens
 prType (TForall n t) = "∀" ++ n ++ ". " ++ prType t |> parens
 prType (TExists n t) = "∃" ++ n ++ ". " ++ prType t |> parens

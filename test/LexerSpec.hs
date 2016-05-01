@@ -13,7 +13,7 @@ spec = do
         scanTokens "∧" `shouldBe` [CONJ]
         scanTokens "∨" `shouldBe` [DISJ]
         scanTokens "⇒" `shouldBe` [IMPL]
-        scanTokens "≡" `shouldBe` [EQUIV]
+        scanTokens "↔" `shouldBe` [EQUIV]
         scanTokens "∀" `shouldBe` [FORALL]
         scanTokens "∃" `shouldBe` [EXISTS]
         scanTokens "." `shouldBe` [DOT]
