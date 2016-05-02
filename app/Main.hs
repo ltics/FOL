@@ -8,9 +8,11 @@ import Core(toplevel)
 import Parser(parseExpr)
 import Control.Monad.Trans
 import System.Console.Haskeline
+import qualified Control.Exception as E
 
 process :: String -> IO ()
-process = putStrLn . show . toplevel . parseExpr
+process expr = E.catch (putStrLn . show . toplevel . parseExpr $ expr)
+                       (\(E.ErrorCall e) -> putStrLn e)
 
 loop :: InputT IO ()
 loop = do
