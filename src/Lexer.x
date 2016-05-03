@@ -18,7 +18,7 @@ tokens :-
        "∧"          { \_ -> CONJ }
        "∨"          { \_ -> DISJ }
        "⇒"          { \_ -> IMPL }
-       "↔"          { \_ -> EQUIV }
+       "⇔"          { \_ -> EQUIV }
        "∀"          { \_ -> FORALL }
        "∃"          { \_ -> EXISTS }
        "."          { \_ -> DOT }

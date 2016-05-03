@@ -37,6 +37,6 @@ prType (TNeg t) = "¬" ++ prType t |> parens
 prType (TConj t1 t2) = prType t1 ++ " ∧ " ++ prType t2 |> parens
 prType (TDisj t1 t2) = prType t1 ++ " ∨ " ++ prType t2 |> parens
 prType (TImpl t1 t2) = prType t1 ++ " ⇒ " ++ prType t2 |> parens
-prType (TEquiv t1 t2) = prType t1 ++ " ↔ " ++ prType t2 |> parens
+prType (TEquiv t1 t2) = prType t1 ++ " ⇔ " ++ prType t2 |> parens
 prType (TForall n t) = "∀" ++ n ++ ". " ++ prType t |> parens
 prType (TExists n t) = "∃" ++ n ++ ". " ++ prType t |> parens
