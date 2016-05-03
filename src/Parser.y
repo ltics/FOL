@@ -24,11 +24,11 @@ import Lexer
     ')'     { RPAREN }
     VAR     { VAR $$ }
 
-%left equiv
-%left impl
-%left disj
-%left conj
-%left neg
+%right equiv
+%right impl
+%right disj
+%right conj
+%right neg
 %%
 
 Expr : forall VAR dot Expr         { TForall $2 $4 }
