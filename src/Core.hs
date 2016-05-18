@@ -21,7 +21,8 @@ eval env term = case term of
                   TConj t1 t2 -> (eval env t1) && (eval env t2)
                   TDisj t1 t2 -> (eval env t1) || (eval env t2)
                   TImpl t1 t2 -> not (eval env t1) || (eval env t2)
-                  TEquiv t1 t2 -> (eval env t1) == (eval env t2)
+                  -- (t1 ⇒ t2) ∧ (t2 ⇒ t1)
+                  TEquiv t1 t2 -> (not (eval env t1) || (eval env t2)) && (not (eval env t2) || (eval env t1))
                   TForall n t -> e1 && e2 where
                     e1 = eval (extend env n True) t
                     e2 = eval (extend env n False) t

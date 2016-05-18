@@ -38,6 +38,7 @@ test-suite fol-test
   type:                exitcode-stdio-1.0
   other-modules:       LexerSpec
                      , ParserSpec
+                     , EvalSpec
   hs-source-dirs:      test
   main-is:             Spec.hs
   build-depends:       base
