@@ -23,6 +23,10 @@ spec = do
       let term9 = parseExpr "∀x. ∃y. x ∧ y"
       let term10 = parseExpr "¬ ¬ ⊤ ∧ ⊤"
       let term11 = parseExpr "¬ (¬ ⊤ ∧ ⊤)"
+      -- double-negation is equivalent to the contradiction
+      let term12 = parseExpr "(∀p. ¬ ¬ p) ⇔ (∀p. ¬ p ⇒ p)"
+      -- Pierce's Law is equivalent to the Law of Excluded Middle
+      let term13 = parseExpr "(∀p. ∀q. ((p ⇒ q) ⇒ p) ⇒ p) ⇔ (∀p. p ∨ ¬ p)"
       toplevel term1 `shouldBe` True
       toplevel term2 `shouldBe` True
       toplevel term3 `shouldBe` False
@@ -34,3 +38,5 @@ spec = do
       toplevel term9 `shouldBe` False
       toplevel term10 `shouldBe` True
       toplevel term11 `shouldBe` True
+      toplevel term12 `shouldBe` True
+      toplevel term13 `shouldBe` True
